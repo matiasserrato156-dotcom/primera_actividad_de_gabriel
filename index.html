@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Landing</title>
+    <link rel="stylesheet" href="./stayles.css">
+</head>
+
+<body>
+
+    <header id="encabezado">
+        <h1>Mi Portafolio</h1>
+        <p>Matias Serrato - Estudiante SENA 2026</p>
+    </header>
+
+    <main>
+
+        <div id="pantalla-inicio">
+            <button class="btn" id="btn-login" onclick="mostrar('login')">
+                Iniciar sesión
+            </button>
+
+            <button class="btn" id="btn-registro" onclick="mostrar('registro')">
+                Registrarse
+            </button>
+        </div>
+
+        <section class="bloque" id="form-login">
+            <h2>Iniciar sesión</h2>
+
+            <label>Correo electrónico</label>
+            <input type="email" id="correo-login" placeholder="ejemplo@correo.com">
+
+            <label>Contraseña</label>
+            <input type="password" id="pass-login" placeholder="........">
+
+            <button class="btn" onclick="entrar()">Entrar</button>
+            <button class="btn-volver" onclick="volver()">Volver</button>
+        </section>
+
+        <section class="bloque" id="form-registro">
+            <h2>Registrarse</h2>
+
+            <label>Correo electrónico</label>
+            <input type="email" id="correo-reg" placeholder="ejemplo@correo.com">
+
+            <label>Contraseña</label>
+            <input type="password" id="pass-reg" placeholder="........">
+
+            <label>Confirmar contraseña</label>
+            <input type="password" id="confirmar-pass" placeholder="........">
+
+            <label>Edad</label>
+            <input type="number" id="edad" placeholder="Ej: 20">
+
+            <label>Género</label>
+            <select id="genero">
+                <option value="">-- Selecciona --</option>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+            </select>
+
+            <div>
+                <input type="checkbox" id="terminos">
+                <label for="terminos">Acepto los términos y condiciones</label>
+            </div>
+
+            <button class="btn" onclick="registrar()">Registrarse</button>
+            <button class="btn-volver" onclick="volver()">Volver</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Proyecto realizado por: Matias Serrato - SENA 2026</p>
+    </footer>
+
+    <script>
+        document.getElementById('form-login').style.display = 'none';
+        document.getElementById('form-registro').style.display = 'none';
+
+        function mostrar(cual) {
+            document.getElementById('pantalla-inicio').style.display = 'none';
+
+            if (cual === 'login') {
+                document.getElementById('form-login').style.display = 'block';
+            } else {
+                document.getElementById('form-registro').style.display = 'block';
+            }
+        }
+
+        function volver() {
+            document.getElementById('form-login').style.display = 'none';
+            document.getElementById('form-registro').style.display = 'none';
+            document.getElementById('pantalla-inicio').style.display = 'block';
+        }
+
+        function entrar() {
+            var correo = document.getElementById('correo-login').value;
+            var pass = document.getElementById('pass-login').value;
+
+            if (correo === '' || pass === '') {
+                alert('Completa todos los campos.');
+                return;
+            }
+
+            alert('Bienvenido!');
+        }
+
+        function registrar() {
+            var correo = document.getElementById('correo-reg').value;
+            var pass = document.getElementById('pass-reg').value;
+            var confirmar = document.getElementById('confirmar-pass').value;
+            var edad = document.getElementById('edad').value;
+            var genero = document.getElementById('genero').value;
+            var terminos = document.getElementById('terminos').checked;
+
+            if (correo === '' || pass === '' || confirmar === '' || edad === '' || genero === '') {
+                alert('Completa todos los campos.');
+                return;
+            }
+
+            if (pass !== confirmar) {
+                alert('Las contraseñas no coinciden.');
+                return;
+            }
+
+            if (!terminos) {
+                alert('Debes aceptar los términos y condiciones.');
+                return;
+            }
+
+            alert('Registro exitoso!');
+            volver();
+        }
+    </script>
+
+</body>
+</html>

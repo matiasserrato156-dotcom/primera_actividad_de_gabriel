@@ -1,0 +1,105 @@
+#encabezado {
+text-align: center;
+padding: 20px;
+background: #333;
+color: white;
+animation: animacion 2s infinite alternate;
+}
+
+main {
+max-width: 500px;
+margin: 40px auto;
+padding: 0 20px;
+}
+
+#pantalla-inicio {
+text-align: center;
+margin-top: 60px;
+}
+
+.bloque {
+background: white;
+padding: 24px;
+border: 1px solid #ccc;
+border-radius: 6px;
+}
+
+.bloque h2 {
+color: #333;
+margin-bottom: 14px;
+}
+
+.bloque p {
+margin-top: 12px;
+margin-bottom: 4px;
+color: #555;
+font-size: 0.9em;
+
+
+}
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+width: 100%;
+padding: 8px;
+border: 1px solid #ccc;
+border-radius: 4px;
+
+}
+input:focus,
+select:focus {
+border-color: #333;
+outline: none;
+}
+
+.btn {
+padding: 10px 24px;
+background: #333;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.btn:hover {
+background: #555;
+}
+
+#btn-registro {
+background: white;
+color: #333;
+border: 1px solid #333;
+margin-top: 10px;
+}
+
+#btn-registro:hover {
+background: #f0f0f0;
+}
+
+.btn-volver {
+background: none;
+border: none;
+color: #888;
+font-size: 0.85em;
+cursor: pointer;
+margin-top: 10px;
+text-decoration: underline;
+}
+
+.btn-volver:hover {
+color: #333;
+
+}
+footer {
+text-align: center;
+padding: 16px;
+background: #333;
+color: rgb(206, 21, 21);
+font-size: 0.85em;
+margin-top: 40px;
+}
+
+@keyframes animacion {
+0% { background: #333; }
+100% { background: red; }
